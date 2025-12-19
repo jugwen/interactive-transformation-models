@@ -139,10 +139,14 @@ defaults_count <- list(
 
 # UI ---------------------------------------------------------------------------
 
-## HTML appearance -------------------------------------------------------------
-
 ui <- fluidPage(
+  
+  ## HTML appearance ------------------------------------------------------------
+  
+  # Load MathJax to render mathematical equations
   tags$head(tags$script(src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js")),
+  
+  # Custom CSS style
   tags$head(
     tags$style(HTML("
       .navbar { margin-bottom: 0; }
@@ -326,6 +330,7 @@ ui <- fluidPage(
                    verbatimTextOutput("model_status_f", placeholder = TRUE),
                    
                    hr(),
+                   
                    h4("Bernstein Basis", style = "color: #007bff;"),
                    numericInput("order_f", "Order (\\(M\\)):",
                                 value = defaults_faithful$bernstein$order,
@@ -391,7 +396,9 @@ ui <- fluidPage(
                    ),
                    wellPanel(
                      h4("Baseline Transformation Function"),
-                     p("Baseline transformation \\(h(y)\\) estimated by the model. It is the transformation applied to the response variable to make it behave like the chosen distribution \\(F_Z\\)."),
+                     p("Baseline transformation \\(h(y)\\) estimated by the model.
+                       It is the transformation applied to the response variable
+                       to make it behave like the chosen distribution \\(F_Z\\)."),
                      plotOutput("transformation_plot_f", height = "300px")
                    ),                   
                    wellPanel(
