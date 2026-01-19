@@ -280,14 +280,14 @@ ui <- fluidPage(
           p(HTML('This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">')),
           p("Main packages versions:"),
           tags$ul(
-            tags$li("mlt: 1.7-1"),
-            tags$li("tram: 1.2-5"),
-            tags$li("cotram: 0.5-3"),
-            tags$li("shiny: 1.11.1"),
-            tags$li("ggplot2: 4.0.0")
+            tags$li(a("mlt", href = "https://cran.r-project.org/package=mlt"), "(T. Hothorn, 2025): 1.7-1"),
+            tags$li(a("tram", href = "https://cran.r-project.org/package=tram"), "(T. Hothorn, L. Barbanti, S. Siegfried, L. Kook, 2025): 1.2-5"),
+            tags$li(a("cotram", href = "https://cran.r-project.org/package=cotram"), "(S. Siegfried, L. Barbanti, T. Hothorn, 2025): 0.5-3"),
+            tags$li(a("shiny", href = "https://cran.r-project.org/package=shiny"), "(W. Chang, J. Cheng, JJ. Allaire, C. Sievert, B. Schloerke, G. Aden-Buie, Y. Xie, J. Allen, J. McPherson, A. Dipert, B.Borges, 2025): 1.11.1"),
+            tags$li(a("ggplot2", href = "https://cran.r-project.org/package=ggplot2"), "(H. Wickham, W. Chang, L. Henry, T. Pedersen, K. Takahashi, C. Wilke, K. Woo, H. Yutani, D. Dunnington, T. van den Brand, 2025): 4.0.0")
           ),
           p("GitHub directory:", a("https://github.com/jugwen/interactive-transformation-models")),
-          p("Contact: Gwen Junod - gwen.junod@stud.hslu.ch"),
+          p("Contact: Gwen Junod - gwen.junod@gmail.com"),
           tags$footer(
             style = "margin-top: 30px; text-align:center; font-size:0.9em; color: #777;",
             paste("App last modified:", format(last_modified, "%d.%m.%Y"))
@@ -408,7 +408,7 @@ ui <- fluidPage(
                    ),
                    wellPanel(
                      h4("Cumulative Distribution Function"),
-                     p("Area under the PDF  curve at \\(x\\)."),
+                     p("Area under the PDF  curve at x."),
                      plotOutput("distribution_plot_f", height = "300px")
                    )
             )
@@ -539,14 +539,14 @@ ui <- fluidPage(
                    ),
                    wellPanel(
                      h4("Cumulative Distribution Function"),
-                     p("Area under the PDF  curve at \\(x\\)."),
+                     p("Area under the PDF  curve at x."),
                      plotOutput("distribution_plot_lin", height = "300px")
                    ),
                    fluidRow(
                      column(6,
                             wellPanel(
                               h4("Quantile Distribution - Fitted Model"),
-                              p("Each observation is plotted according to its observed", em("cmedv"), "(\\(y\\) axis) and linear predictor (\\(x\\) axis). The confidence bands indicate the probability of having a home value at or below the observed value, given that observation's linear predictor.",
+                              p("Each observation is plotted according to its observed", em("cmedv"), "(y axis) and linear predictor (x axis). The confidence bands indicate the probability of having a home value at or below the observed value, given that observation's linear predictor.",
                                 tags$sup(
                                   icon("circle-question", class = "text-info", style = "cursor: pointer;"),
                                   id = "info_icon_qplot_lin"
@@ -702,12 +702,12 @@ ui <- fluidPage(
                    ),
                    wellPanel(
                      h4("Cumulative Distribution Function"),
-                     p("Area under the PDF  curve at \\(x\\)."),
+                     p("Area under the PDF  curve at x."),
                      plotOutput("distribution_plot_strat", height = "300px")
                    ),
                    wellPanel(
                      h4("Quantile Distribution for each stratum"),
-                     p("Each observation is plotted according to its observed", em("cmedv"), "(\\(y\\) axis) and linear predictor (\\(x\\) axis). The confidence bands indicate the probability of having a home value at or below the observed value, given that observation's linear predictor."),
+                     p("Each observation is plotted according to its observed", em("cmedv"), "(y axis) and linear predictor (x axis). The confidence bands indicate the probability of having a home value at or below the observed value, given that observation's linear predictor."),
                      plotOutput("quantile_plot_strat", height = "300px")
                    )
             )
@@ -1032,7 +1032,7 @@ ui <- fluidPage(
                    ),
                    wellPanel(
                      h4("Cumulative Distribution Function by Year"),
-                     p("Area under the PDF curve at \\(x\\)."),
+                     p("Area under the PDF curve at x."),
                      plotOutput("distribution_plot_count", height = "300px")
                    )
             )
